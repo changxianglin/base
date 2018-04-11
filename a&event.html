@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>a&event</title>
+    <style media="screen">
+      .link {
+        margin: 25px;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">
+      <a href="#" class="buffer">href</a>
+      <a href="#" class="link">link</a>
+      <a href="#" class="pink">buffer</a>
+    </div>
+    <script type="text/javascript">
+      var alink = function(element, url) {
+        var envs = document.querySelector(element)
+        envs.addEventListener('click', function() {
+          window.location.href = url
+        })
+      }
+
+      var _main = function() {
+        alink('.buffer', 'http://www.douban.com/')
+        alink('.link', 'http://www.zhihu.com/')
+        alink('.pink', 'http://www.zhourong.space/')
+      }
+
+      _main()
+    </script>
+  </body>
+</html>
