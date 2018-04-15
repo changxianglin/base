@@ -80,6 +80,9 @@ var _main = function() {
   // 冻结的对象
   // Obejct.freeze() Obejct.isFreeze()
 
-  // 高级定时器
-  
+  // 高级定时器 setTimeout
+
+  // 重复的定时器 setInterval
+  // 函数节流
+
 }
