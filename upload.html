@@ -14,22 +14,29 @@
 <script type="text/javascript">
 $(document).ready(
   function() {
-    var formData = new FormData();
-    formData.append('file', $('#file')[0].files[0]);
-    $.ajax({
-      url: '/upload',
-      type: 'POST',
-      cache: false,
-      data: formData,
-      processData: false,
-      contentType: false
-    }).done(function(res) {
-    alert('yes')
-    }).fail(function(res) {
-    alert('haha')
-    });
-  }
-)
+    var envs = document.getElementById('upload')
+    envs.addEventListener('click', function() {
+      var formData = new FormData();
+      formData.append('file', $('#file')[0].files[0]);
+      var flag = $('#file')[0].files[0] || ''
+      console.log(flag)
+      if(flag) {
+        $.ajax({
+          url: '/upload',
+          type: 'POST',
+          cache: false,
+          data: formData,
+          processData: false,
+          contentType: false
+        }).done(function(res) {
+        alert('yes')
+        }).fail(function(res) {
+        alert('haha')
+        });
+      }
+    })
+    }
+  )
 </script>
 </body>
 </html>
