@@ -84,5 +84,6 @@ var _main = function() {
 
   // 重复的定时器 setInterval
   // 函数节流
+  
 
 }
