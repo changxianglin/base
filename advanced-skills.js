@@ -84,6 +84,22 @@ var _main = function() {
 
   // 重复的定时器 setInterval
   // 函数节流
-  
 
+  // 获取对象的 value
+  var cc = {a: '', b: '', c: ''}
+
+  var getObj = function(obj) {
+    var value = []
+    for(var prop in obj) {
+      value.push(obj[prop])
+    }
+    return value
+  }
+
+  var test = getObj(cc)
+  console.log(test.length, test.value)
+
+  // 自定义事件
+  // 观察者设计模式
+  
 }
