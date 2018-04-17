@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<select name="" id="test">
+  <option value="0">all</option>
+  <option value="1">first</option>
+  <option value="2" selected>sencond</option>
+  <option value="3">thrid</option>
+</select>
+<script type="text/javascript">
+var init = {
+  yii: '1',
+}
+
+var setS = function(data) {
+  var envs = document.querySelector('#test')
+  var len = envs.length
+  console.log(len)
+  for(var i = 0; i < len; i++) {
+    console.log(envs[i].value)
+    if(envs[i].value == data.yii) {
+      console.log(i)
+      envs[i].selected = true
+    }
+  }
+}
+
+
+setS(init)
+</script>
+</body>
+</html>
