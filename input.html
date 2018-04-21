@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table>
+    <tr>
+      <th>
+        <label for="test">testAll</label>
+        <input type="checkbox" id='test'>
+      </th>
+      <th>123</th>
+      <th>456</th>
+      <th>789</th>
+      <th>012</th>
+    </tr>
+    <td><input type="checkbox" class='mark'></td>
+    <td><input type="checkbox" class='mark'></td>
+    <td><input type="checkbox" class='mark'></td>
+    <td><input type="checkbox" class='mark'></td>
+    <td><input type="checkbox" class='mark'></td>
+    <td><input type="checkbox" class='mark'></td>
+    <td><input type="checkbox" class='mark'></td>
+    <td><input type="checkbox" class='mark'></td>
+  </table>
+  <script type="text/javascript">
+  var __main = function() {
+  var amis = document.querySelector('#test')
+  var amiss = document.querySelectorAll('.mark')
+  amis.addEventListener('click', function() {
+    console.log(amis.checked)
+    if (amis.checked == false) {
+      for (var i = 0; i < amiss.length; i++) {
+        amiss[i].checked = false
+      }
+    } else {
+      for (var i = 0; i < amiss.length; i++) {
+        amiss[i].checked = true
+      }
+    }
+  })
+  }
+
+  __main()
+  </script>
+  </body>
+</html>
