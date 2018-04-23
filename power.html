@@ -20,9 +20,9 @@
     </style>
   </head>
   <body>
-    <div class="video">
+    <textarea class="video">
 
-    </div>
+    </textarea>
     <hr>
     <div class="vice">
       <button type="button" name="button">button01</button>
@@ -42,7 +42,22 @@
     </div>
 
     <script type="text/javascript">
+      // number
+      var initNum = {
+        "button01": '1',
+        "button02": '2',
+        "button03": '3',
+        "button04": '4',
+        "button05": '5',
+        "button06": '6',
+        "button07": '7',
+        "button08": '8',
+        "button09": '9',
+        "button10": '10',
+      }
       var number = []
+
+      // functions
       var contents = function(data) {
         var intent = document.querySelector('.video')
         intent.innerText += data + ','
@@ -76,13 +91,55 @@
 
       events()
 
-      var end = function() {
+      var end = function(arr, obj) {
         var intent = document.querySelector('.end')
         intent.addEventListener('click', function() {
           console.log(number)
+          var result = []
+          for(var i = 0; i < arr.length; i++) {
+            result.push(obj[arr[i]])
+          }
+          console.log(result)
         })
       }
-      end()
+      end(number, initNum)
+
+
+      // test
+      var testinit = {
+        '1': "button01",
+        '2': "button02",
+        '3': "button03",
+        '4': "button04",
+        '5': "button05",
+        '6': "button06",
+        '7': "button07",
+        '8': "button08",
+        '9': "button09",
+        '10': "button10",
+      }
+      var testNum = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
+
+      // test funtion
+      var traverse = function(element, arr, obj) {
+        var intent = document.querySelector(element)
+        var result = []
+        for(var i = 0; i < arr.length; i++) {
+          result.push(obj[arr[i]])
+          number.push(obj[arr[i]])
+        }
+        intent.innerText = result.join() + ','
+
+        var testclass = document.querySelectorAll('button')
+        for(var j = 0; j < testclass.length; j++) {
+            if(result.includes(testclass[j].innerText)) {
+              testclass[j].classList.add('adds')
+            }
+        }
+
+      }
+
+      traverse('.video', testNum, testinit)
     </script>
   </body>
 </html>
