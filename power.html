@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>video</title>
+    <style media="screen">
+      .video {
+        margin-left: 40%;
+        width: 500px;
+        height: 500px;
+        border: 1px #eee solid;
+        display: inline-block;
+      }
+      button {
+        border: 1px #0aa0a0 solid;
+      }
+      .adds {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video">
+
+    </div>
+    <hr>
+    <div class="vice">
+      <button type="button" name="button">button01</button>
+      <button type="button" name="button">button02</button>
+      <button type="button" name="button">button03</button>
+      <button type="button" name="button">button04</button>
+      <button type="button" name="button">button05</button>
+      <button type="button" name="button">button06</button>
+      <button type="button" name="button">button07</button>
+      <button type="button" name="button">button08</button>
+      <button type="button" name="button">button09</button>
+      <button type="button" name="button">button10</button>
+    </div>
+    <hr>
+    <div class="end">
+      <input type="button" name="" value="OK">
+    </div>
+
+    <script type="text/javascript">
+      var number = []
+      var contents = function(data) {
+        var intent = document.querySelector('.video')
+        intent.innerText += data + ','
+      }
+      var minusContents = function() {
+        var intent = document.querySelector('.video')
+        intent.innerText = number.join() + ','
+      }
+      var events = function() {
+        var intent = document.querySelector('.vice')
+        intent.addEventListener('click', function(event) {
+          console.log(event.target.innerText)
+          var sign = event.target
+          var result = event.target.innerText
+          if(number.includes(result)) {
+            console.log('have')
+            sign.classList.remove('adds')
+            for(var i = 0; i < number.length; i++) {
+              if(number[i] == result) {
+                number.splice(i, 1)
+                minusContents()
+              }
+            }
+          } else {
+            sign.classList.add('adds')
+            contents(result)
+            number.push(result)
+          }
+        })
+      }
+
+      events()
+
+      var end = function() {
+        var intent = document.querySelector('.end')
+        intent.addEventListener('click', function() {
+          console.log(number)
+        })
+      }
+      end()
+    </script>
+  </body>
+</html>
