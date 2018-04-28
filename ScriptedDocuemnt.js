@@ -54,4 +54,29 @@ var __main = function() {
   // 表单和元素的事件处理程序
   // 复选框和单选框都有一个状态标识, 他们的 click 和 change
   // 表单在收到焦点是会触发 focus 事件, 失去焦点时会触发 blur 事件.
+
+  // 按钮
+  // 提交和重置元素就是按钮， 不同的是它们有与之相关联的默认动作（表单的提交和重置0）
+  // 开关按钮
+  // 复选框和单选框是开关按钮
+  // onclick, onchange事件
+  // 文本域 type = 'text'
+  // 多行文本域 textarea
+  // <input type = "file"> 上传文件, onchange 处理程序
+  // 不同的文本输入元素定义 onkeypress, onkeydown, onkeyup
+  // 选择框和选项元素
+  // select 如果有 select-multiple 那就可以选取多个,否则就是选一个
+  // select 的 Option 元素的类数组对象
+  // select 的 selected 选中
+  // 另外每个 Option 对象有一个 text 属性
+  // 标准的调用更明白的插入和移除选项元素：Document.createEelement(),Node.insertBefore(), Node.removeChild()
+
+  // 其他文档特性
+  // Document 的属性
+  // cookie
+  // document.write() 不是一个好选择
+  // 查询选取的文本
+  // 可编辑的内容
+  // contenteditable
+  // designMode
 }
