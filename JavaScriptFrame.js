@@ -15,4 +15,10 @@ var __main  = function() {
   }
   // 数组化
   // Array.prototype.slice.call
+  // undefined、null、string、number、boolean、function
+  // tring、number、boolean 可以包装成 '伪对象'
+  // RegExp 与 Array, isArray
+  // null、undefined、NaN
+
+  // 语言模块
 }
