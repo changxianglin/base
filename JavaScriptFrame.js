@@ -21,4 +21,7 @@ var __main  = function() {
   // null、undefined、NaN
 
   // 语言模块
+  // 字符串的扩展与修复
+  // indexOf、lastIndexOf、search
+  // repeat、
 }
