@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>all checked  or no</title>
+</head>
+<body>
+  <div>
+    <table border="1">
+    <tr>
+    <th>all <input type="checkbox" class = 'main'></th>
+    <th>Savings</th>
+    </tr>
+    <tr>
+    <td>
+      <input type="checkbox" class = 'vice'>
+      </td>
+    <td>$100</td>
+  </tr>
+      <tr>
+    <td>
+      <input type="checkbox" class = 'vice'>
+      </td>
+    <td>$100</td>
+  </tr>
+      <tr>
+    <td>
+      <input type="checkbox" class = 'vice'>
+      </td>
+    <td>$100</td>
+  </tr>
+      <tr>
+    <td>
+      <input type="checkbox" class = 'vice'>
+      </td>
+    <td>$100</td>
+  </tr>
+      <tr>
+    <td>
+      <input type="checkbox" class = 'vice'>
+      </td>
+    <td>$100</td>
+  </tr>
+      <tr>
+    <td>
+      <input type="checkbox" class = 'vice'>
+      </td>
+    <td>$100</td>
+  </tr>
+</table>
+  </div>
+  <script type="text/javascript">
+  var allVice = function(element) {
+var intents = document.querySelectorAll(element)
+for(var i = 0; i < intents.length; i++) {
+  intents[i].checked = true
+}
+}
+
+var allViceF = function(element) {
+var intents = document.querySelectorAll(element)
+for(var i = 0; i < intents.length; i++) {
+  intents[i].checked = false
+}
+}
+
+
+var mainJude = function(element, fn, foo, item) {
+var intent = document.querySelector(element)
+intent.addEventListener('click', function(event) {
+  var flag = event.target.checked
+    if(flag) {
+      fn(item)
+    } else {
+      foo(item)
+    }
+})
+}
+
+
+
+mainJude('.main', allVice, allViceF, '.vice')
+</script>
+</body>
+</html>
