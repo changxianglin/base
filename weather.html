@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>weather</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <button type="button" name="button" id = 'weather'>weather</button>
+    <div class="content">
+
+    </div>
+  </body>
+  <script type="text/javascript">
+    var pageContent = function(element, result) {
+        var intent = document.querySelector(element)
+        var span = document.createElement('span')
+        var br = document.createElement('hr')
+        span.innerText = result.city
+        intent.appendChild(span)
+        intent.appendChild(br)
+
+        for(var i = 0; i < result.forecast.length; i++) {
+          var p = document.createElement('p')
+          p.innerText = "日期: " + result.forecast[i].date + "  风力: " + result.forecast[i].fengli + " 风向: " + result.forecast[i].fengxiang
+           + " 最高温：" + result.forecast[i].high + " 最低温: " + result.forecast[i].low + " 天气：" + result.forecast[i].type
+          intent.appendChild(p)
+        }
+    }
+
+    var sendAjax = function() {
+      $.ajax({
+        method: "GET",
+        async:true,
+        // url: "http://www.weather.com.cn/data/sk/101280601.html",
+        // url: "http://wthrcdn.etouch.cn/weather_mini?citykey=101010100",
+        url: "http://wthrcdn.etouch.cn/weather_mini?city=深圳市",
+        dataType:"json",
+        data: {},
+        success: function(data) {
+          console.log('Success', data)
+          console.log(data.data.forecast)
+          pageContent('.content', data.data)
+        },
+        error: function(data) {
+          console.log('Error', data)
+        },
+      })
+   //   $.ajax({
+   //   type:"get",    //请求方式
+   //   async:true,    //是否异步
+   //   url:"http://flash.weather.com.cn/wmaps/xml/guangdong.xml",
+   //  dataType:"jsonp",    //跨域json请求一定是jsonp
+   //  jsonp: "callbackparam",    //跨域请求的参数名，默认是callback
+   //      //jsonpCallback:"successCallback",    //自定义跨域参数值，回调函数名也是一样，默认为jQuery自动生成的字符串
+   //  data:{"query":"civilnews"},    //请求参数
+   //
+   //   beforeSend: function() {
+   //       //请求前的处理
+   //       console.log('be')
+   //   },
+   //
+   //   success: function(data) {
+   //       //请求成功处理，和本地回调完全一样
+   //       console.log('su')
+   //   },
+   //
+   //  complete: function() {
+   //       //请求完成的处理
+   //       console.log('co')
+   //  },
+   //
+   //  error: function() {
+   //       //请求出错处理
+   //       console.log('er')
+   //   }
+   // });
+    }
+    var test = function(element) {
+      var intent = document.querySelector('#weather')
+      intent.addEventListener('click', function() {
+        sendAjax()
+      })
+    }
+
+    test('#weather')
+    sendAjax()
+  </script>
+</html>
