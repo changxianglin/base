@@ -34,5 +34,12 @@ const main => {
 
   // 纯空对象 var object = Object.create(null)
 
-  
+  // 真类降临
+
+  // es6 中的 class
+
+  // 在 ES6 中， 我们统一用 class 关键字来创建一个类，constructor 关键字定义构造函数，
+  // 用 extends 关键字来实现继承，super 来实现调用父类方法。
+
+  // ES6 中的 class 实际就是函数
 }
