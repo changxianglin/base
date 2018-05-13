@@ -1,4 +1,4 @@
-const main => {
+const main = () => {
   // prototype
 
   // 构造函数
