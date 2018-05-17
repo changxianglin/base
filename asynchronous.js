@@ -12,5 +12,8 @@ const main = () => {
   // JSDeferred 里程碑
   // 核心区别
   // es6 Promise 第一个标准模型
-  // 
+  // es6 生成器
+  // next 方法
+  // 关键字 yield
+  // 异常处理 throw 
 }
