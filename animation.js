@@ -9,5 +9,12 @@ const main = () => {
   // hide
   // toggle
   // requestAnimationFrame
+  // transition
+  // transition-property
+  // transition-duration
+  // transition-timing-function
+  // transition-delay
+  // css3 animation
+  // mass Framework 基于 css 的动画引擎
   // 
 }
