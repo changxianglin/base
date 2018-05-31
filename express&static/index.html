@@ -12,7 +12,11 @@
     var foo = function() {
         var intent = document.querySelector('#button')
         intent.addEventListener('click', function() {
-            $.get("https://www.easy-mock.com/mock/5aead18d44f4206ef1c42cfd/example/alert",function(data,status){
+            // $.get("https://www.easy-mock.com/mock/5aead18d44f4206ef1c42cfd/example/alert",function(data,status){
+            //     var text = data.data.name
+            //     document.querySelector('#content').innerText = text
+            // });
+            $.get("/index/about", function(data,status){
                 var text = data.data.name
                 document.querySelector('#content').innerText = text
             });
