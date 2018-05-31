@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.12.1/bootstrap-table-locale-all.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.12.1/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
+  <body>
+<table id="table"></table>
+<script type="text/javascript">
+$('#table').bootstrapTable({
+  url: 'https://www.easy-mock.com/mock/5aead18d44f4206ef1c42cfd/example/tabs',
+  columns: [{
+      field: 'id',
+      title: 'Item ID'
+  }, {
+      field: 'name',
+      title: 'Item Name'
+  }, {
+      field: 'price',
+      title: 'Item Price'
+  }],
+});
+</script>
+  </body>
+</html>
