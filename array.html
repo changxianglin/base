@@ -5,11 +5,17 @@
     <title>array-vue</title>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> -->
     <script src = "https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style media="screen">
+      li {
+        display: inline-block;
+        margin-left: 20px;
+      }
+    </style>
   </head>
   <body>
     <div id = 'root'>
-      <ul>
-        <li v-for = 'item in list'>{{item}}</li>
+      <ul @mouseover = 'clear' @mouseout = "start">
+        <li v-for = 'item in list'>{{item.msg}}--{{item.info}}</li>
      </ul>
      <div @click = 'say'>
        change
@@ -19,19 +25,43 @@
       new Vue({
         el: '#root',
         data: {
+          flag: 1,
           list: [
-              1, 2, 3, 4, 5, 6, 7
+              {msg: 1, info: 'ok'},
+              {msg: 2, info: 'oo'},
+              {msg: 3, info: 'ok'},
+              {msg: 4, info: 'kk'},
+              {msg: 5, info: 'oa'},
+              {msg: 6, info: 'ao'},
+              {msg: 7, info: 'xx'}
           ]
+        },
+        mounted() {
+          var selt_ = this
+          var a = setInterval(function() {
+            selt_.say()
+          }, 3000)
         },
         methods: {
           say() {
             console.log('click')
             var arr = this.list[0]
-            this.list.shift()
-            this.list.push(arr)
+            if(this.flag == 1) {
+              this.list.splice(0, this.flag)
+              this.list.push(arr)
+            }
             // this.list.reverse()
+          },
+          clear() {
+            // Object.freeze(this.list)
+            this.flag = 0
+            console.log('mouseover')
+          },
+          start() {
+            this.flag = 1
+            console.log('gogogo')
           }
-        }
+        },
       })
     </script>
   </body>
