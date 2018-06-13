@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>swiperright-vue</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> -->
+    <script src = "https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <style media="screen">
+      li {
+        display: inline-block;
+        margin-left: 20px;
+      }
+      .mark {
+        margin-left: 50px;
+        margin-top: 50px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id = 'root'>
+      <ul @mouseover = 'clear' @mouseout = "start">
+        <li v-for = 'item in list'>{{item.msg}}--{{item.info}}</li>
+     </ul>
+     <div @click = 'say' >
+       change
+     </div>
+     <div @click = 'reverse' @mouseover = 'clear' @mouseout = "start" class="mark">
+       reverse
+     </div>
+    </div>
+    <script>
+      new Vue({
+        el: '#root',
+        data: {
+          flag: 1,
+          list: [
+              {msg: 1, info: 'ok'},
+              {msg: 2, info: 'oo'},
+              {msg: 3, info: 'ok'},
+              {msg: 4, info: 'kk'},
+              {msg: 5, info: 'oa'},
+              {msg: 6, info: 'ao'},
+              {msg: 7, info: 'xx'}
+          ]
+        },
+        mounted() {
+          var selt_ = this
+          var a = setInterval(function() {
+            selt_.say()
+          }, 3000)
+        },
+        methods: {
+          say() {
+            console.log('click')
+            var arr = this.list[0]
+            if(this.flag == 1) {
+              this.list.splice(0, this.flag)
+              this.list.push(arr)
+            }
+            // this.list.reverse()
+          },
+          clear() {
+            // Object.freeze(this.list)
+            this.flag = 0
+            console.log('mouseover')
+          },
+          start() {
+            this.flag = 1
+            console.log('gogogo')
+          },
+          reverse() {
+            console.log('reverse')
+            var flag0 = this.list[this.list.length - 1]
+            var flag1 = this.list[this.list.length - 2]
+            var flag2 = this.list[this.list.length - 3]
+            this.list.splice(this.list.length - 3, 3)
+            var index0 = this.list[0]
+            var index1 = this.list[1]
+            var index2 = this.list[2]
+            this.list.splice(0, 3)
+            this.list.unshift(flag2)
+            this.list.unshift(flag1)
+            this.list.unshift(flag0)
+            this.list.splice(2, 0, index0)
+            this.list.splice(3, 0, index1)
+            this.list.splice(4, 0, index2)
+          }
+        },
+      })
+    </script>
+  </body>
+</html>
