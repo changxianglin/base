@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>boom</title>
+    <style media="screen">
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .box {
+        height: 500px;
+        width: 500px;
+        margin-left: 200px;
+        transform: perspective(600px) rotateX(45deg);
+        margin: 20 auto;
+        border: red 1px solid;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+      }
+      .pop {
+        width: 48px;
+        height: 48px;
+        border: 1px blue solid;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warpper">
+      <div class="box">
+
+      </div>
+    </div>
+    <script type="text/javascript">
+    var miniBox = document.querySelector('.box')
+
+      var foo = function() {
+        for(var i = 0; i < 10; i++) {
+          for(var j = 0; j < 10; j++) {
+            console.log('heihei')
+            var create = document.createElement('div')
+            create.classList.add('pop')
+            create.innerText = i + '-' + j
+            miniBox.appendChild(create)
+          }
+        }
+      }
+
+      foo()
+    </script>
+  </body>
+</html>
