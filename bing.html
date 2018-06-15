@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>bind</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var buffer = {
+        entries: [],
+        add: function(s) {
+          this.entries.push(s)
+        },
+        concat: function() {
+          return this.entries.join('')
+        }
+    }
+
+    var source = ['876', '_', '5309']
+    source.forEach(buffer.add, buffer)
+    buffer.join()
+
+    source.forEach(buffer.add.bind(buffer))
+    buffer.join()
+
+    // 对象和原型
+    function User(name, passwordHash) {
+      this.name = name
+      this.passwordHash = passwordHash
+    }
+
+    User.prototype.toString = function() {
+      return "[User" + this.name + "]"
+    }
+
+    User.prototype.checkPassword = function(password) {
+      return hash(password) === this.passwordHash
+    }
+
+    var u = new User('sfalken', 'jslfjlsooer0380293dfgj')
+
+    var empty = Object.create(null)
+
+    if(typeOf Object.getPrototytpeOf === 'undefined') {
+      Object.getPrototytpeOf = function(obj) {
+        var t = typeof obj
+        if(!obj || (t !== 'object' && t !== 'function')) {
+          throw new TypeError('not an object')
+        }
+        return obj.__proto__
+      }
+    }
+    </script>
+  </body>
+</html>
