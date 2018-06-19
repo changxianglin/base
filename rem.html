@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>rem</title>
+    <style type="text/css">
+      .box {
+        width: 100%;
+      }
+
+      .inner:nth-child(1) {
+        background-color: red;
+      }
+      .inner:nth-child(2) {
+        background-color: blue;
+      }
+      .inner:nth-child(3) {
+        background-color: red;
+      }
+      .inner:nth-child(4) {
+        background-color: blue;
+      }
+      @media screen and (max-width: 320px) {
+        .inner {
+          width: 25%;
+          height: 100px;
+          float: left;
+        }
+      }
+      @media screen and (min-width: 321px) {
+        .inner {
+          width: 100%;
+          height: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+<!-- 跑在手机端的 web 页面 （H5 页面） -->
+
+<!-- 跨平台 -->
+
+<!-- 基于 webview -->
+
+<!-- 告别 IE 拥抱 webkit -->
+
+<!-- 更高的适配性和性能要求 -->
+
+<!-- 常见移动 web 适配方法 -->
+<!-- pc： -->
+<!-- 960px / 1000px 居中 -->
+<!-- 盒子模型, 定高, 定宽 -->
+<!-- Display: inline-block -->
+
+<!-- 移动 web  -->
+<!-- 定高, 宽度百分比 -->
+<!-- flex -->
+<!-- Media Query ( 媒体查询 ) -->
+
+<!-- @media 媒体类型 and ( 媒体特性 ) { } -->
+<!-- 媒体类型：screen, print -->
+<!-- 媒体特性： max-width, max-height -->
+
+<div class="box">
+  <div class="inner">
+  </div>
+  <div class="inner">
+  </div>
+  <div class="inner">
+  </div>
+  <div class="inner">
+  </div>
+</div>
+  </body>
+</html>
