@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>index</title>
+  </head>
+  <body>
+    <div class="main">
+
+    </div>
+    <input class="position" type="text" name="" value="">
+    <br>
+    <input class="content" type="text" name="" value="">
+    <br>
+    <button class="ok" type="button" name="button">sure</button>
+    <script type="text/javascript">
+    var writeNumber = function(arr) {
+      var intent = document.querySelector('.main')
+      for(var i = 0; i < arr.length; i++) {
+        intent.innerText += arr[i]
+        console.log('add')
+      }
+    }
+
+    var test = []
+    test[2] = {a: 3}
+    test[4] = {a: 5}
+
+
+    var up = []
+
+    var addNumber = function(up, test) {
+      var intent = document.querySelector('.main')
+      intent.innerText = null
+      up.length = 0
+      for(let i = 0; i < test.length; i++) {
+        if(test[i]) {
+          up.push(test[i])
+        }
+      }
+    }
+    addNumber(up, test)
+
+    console.log(up)
+    writeNumber(up)
+
+
+
+    var sure = document.querySelector('.ok')
+    sure.addEventListener('click', function() {
+      var positions = document.querySelector('.position').value
+      var contents = document.querySelector('.content').value
+      console.log('add number', positions, contents)
+      test[positions] = {a: contents}
+      addNumber(up, test)
+      console.log('up', up)
+      writeNumber(up)
+    })
+
+    </script>
+  </body>
+</html>
