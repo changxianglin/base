@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>
+    <strong class="num">0</strong>
+    +</p>
+    <script type="text/javascript">
+      var bar = function() {
+        var timer = setInterval(function() {
+          var num = document.querySelector('.num').innerText
+          var content = Number(num)
+          if(content >= 500) {
+            clearInterval(timer)
+          } else {
+            content += 20
+            console.log('start')
+            document.querySelector(".num").innerText = content
+          }
+        }, 30)
+      }
+      bar()
+    </script>
+  </body>
+</html>

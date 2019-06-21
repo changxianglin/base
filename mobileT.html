@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>touch</title>
+    <style media="screen">
+      .main {
+        width: 50rem;
+        height: 50rem;
+        background: red;
+      }
+      .add {
+        width: 60rem;
+        height: 60rem;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+
+    </div>
+    <script type="text/javascript">
+      var foo = function(element, env, addClass) {
+        var intent = document.querySelector(element)
+        intent.addEventListener(env, function() {
+          intent.classList.add(addClass)
+          intent.innerText = '123'
+        })
+      }
+
+      foo('.main', 'touchmove', 'add')
+      foo('.main', 'click', 'add')
+    </script>
+  </body>
+</html>
